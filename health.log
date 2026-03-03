@@ -1,0 +1,24 @@
+2026-03-03 23:46:12 | INFO     | monitor | CPU usage: 50.0% (threshold: 80.0%)
+2026-03-03 23:46:12 | INFO     | monitor | CPU usage: 95.0% (threshold: 80.0%)
+2026-03-03 23:46:12 | INFO     | monitor | Memory usage: 60.0% (threshold: 85.0%)
+2026-03-03 23:46:12 | INFO     | monitor | Memory usage: 92.0% (threshold: 85.0%)
+2026-03-03 23:46:12 | INFO     | monitor | Disk usage (/): 70.0% (threshold: 90.0%)
+2026-03-03 23:46:12 | INFO     | monitor | Disk usage (/): 95.0% (threshold: 90.0%)
+2026-03-03 23:46:12 | INFO     | monitor | Endpoint https://example.com/health: HEALTHY (200 OK)
+2026-03-03 23:46:12 | WARNING  | monitor | Endpoint https://example.com/health: UNHEALTHY (status 503)
+2026-03-03 23:46:12 | ERROR    | monitor | Endpoint https://example.com/health: CONNECTION REFUSED
+2026-03-03 23:46:12 | INFO     | monitor | Ping to 8.8.8.8: SUCCESS
+2026-03-03 23:46:12 | WARNING  | monitor | Ping to 192.168.255.255: FAILED
+2026-03-03 23:46:12 | INFO     | alerts | Alert 'test_key' suppressed (cooldown active, 599s remaining).
+2026-03-04 00:38:29 | INFO     | monitor | ============================================================
+2026-03-04 00:38:29 | INFO     | monitor | Starting health check run
+2026-03-04 00:38:29 | INFO     | monitor | ============================================================
+2026-03-04 00:38:31 | INFO     | monitor | CPU usage: 5.2% (threshold: 80.0%)
+2026-03-04 00:38:31 | INFO     | monitor | Memory usage: 90.3% (threshold: 85.0%)
+2026-03-04 00:38:31 | INFO     | alerts | Slack alert sent: 🔴 *Memory usage critical:* 90.3% (used 7075 MB / 7832 MB, threshold: 85.0%)
+2026-03-04 00:38:31 | INFO     | monitor | Disk usage (C:\): 79.8% (threshold: 90.0%)
+2026-03-04 00:38:31 | INFO     | monitor | Ping to 8.8.8.8: SUCCESS
+2026-03-04 00:38:31 | ERROR    | monitor | Endpoint https://your-api.example.com/health: CONNECTION REFUSED
+2026-03-04 00:38:32 | INFO     | alerts | Slack alert sent: 🔴 *Endpoint down:* Could not connect to `https://your-api.example.com/health`.
+2026-03-04 00:38:32 | INFO     | monitor | Health check complete: {'cpu_percent': 5.2, 'memory_percent': 90.3, 'disk_percent': 79.8, 'ping_ok': True, 'endpoint_ok': False}
+2026-03-04 00:38:32 | INFO     | monitor | ============================================================
