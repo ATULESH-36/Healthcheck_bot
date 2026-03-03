@@ -163,7 +163,7 @@ All configuration is managed through environment variables (loaded from `.env`).
 5. Copy the **Webhook URL** and paste it into your `.env` file:
 
 ```
-SLACK_WEBHOOK_URL=https://***REMOVED***/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 ---
