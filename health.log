@@ -22,3 +22,12 @@
 2026-03-04 00:38:32 | INFO     | alerts | Slack alert sent: 🔴 *Endpoint down:* Could not connect to `https://your-api.example.com/health`.
 2026-03-04 00:38:32 | INFO     | monitor | Health check complete: {'cpu_percent': 5.2, 'memory_percent': 90.3, 'disk_percent': 79.8, 'ping_ok': True, 'endpoint_ok': False}
 2026-03-04 00:38:32 | INFO     | monitor | ============================================================
+2026-03-04 10:11:43 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000
+2026-03-04 10:11:44 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000
+2026-03-04 10:25:47 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000
+2026-03-04 10:25:50 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000
+2026-03-04 10:25:53 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000
+2026-03-04 10:25:56 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000
+2026-03-04 10:25:59 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000
+2026-03-04 10:26:25 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000
+2026-03-04 10:26:26 | INFO     | web_dashboard | Starting web dashboard on http://localhost:5000

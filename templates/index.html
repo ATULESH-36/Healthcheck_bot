@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Health Checkbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <div class="title-section">
+                    <h1>Server Health Checkbot</h1>
+                    <div class="global-status">
+                        <span class="status-badge online" id="status-online">1 Server Online</span>
+                        <span class="status-badge warnings" id="status-warnings">0 Warnings</span>
+                        <span class="status-badge critical" id="status-critical">0 Critical</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Top Row: Metrics -->
+        <div class="metrics-grid">
+            <div class="panel">
+                <div class="panel-header">
+                    <span>⚡ CPU Usage</span>
+                </div>
+                <div class="chart-container line-chart-container">
+                    <canvas id="cpuChart"></canvas>
+                </div>
+                <div class="panel-footer" id="cpu-footer">
+                    Loading...
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <span>🧠 Memory Usage</span>
+                </div>
+                <div class="chart-container gauge-container">
+                    <canvas id="memoryChart"></canvas>
+                    <div class="gauge-center" id="memory-center">--</div>
+                </div>
+                <div class="panel-footer" id="memory-footer">
+                    Loading...
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <span>💾 Disk Usage</span>
+                </div>
+                <div class="chart-container gauge-container">
+                    <canvas id="diskChart"></canvas>
+                    <div class="gauge-center" id="disk-center">--</div>
+                </div>
+                <div class="panel-footer" id="disk-footer">
+                    Loading...
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <span>🌐 Network Traffic (Ping/Endpoint)</span>
+                </div>
+                <div class="network-status" id="network-status-container">
+                    <div class="net-item">
+                        <span class="net-label">Ping Status:</span>
+                        <span class="net-val" id="ping-status">Checking...</span>
+                    </div>
+                    <div class="net-item">
+                        <span class="net-label">HTTP Endpoint:</span>
+                        <span class="net-val" id="endpoint-status">Checking...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Row: Alerts & Critical Stats -->
+        <div class="middle-grid">
+            <div class="panel alerts-panel">
+                <div class="panel-header">
+                    <span>⚠️ Active Alerts (Mock)</span>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Severity</th>
+                                <th>Server</th>
+                                <th>Issue</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="alerts-table-body">
+                            <tr>
+                                <td><span class="indicator red"></span> Critical</td>
+                                <td>Server-08</td>
+                                <td>High CPU Usage</td>
+                                <td><span class="badge warning">Sustained</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="indicator red"></span> Critical</td>
+                                <td>Server-12</td>
+                                <td>Low Disk Space</td>
+                                <td><span class="badge warning">Sustained</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel critical-stats-panel">
+                <div class="panel-header">
+                    <span>🎯 Checks Summary</span>
+                </div>
+                <div class="table-container">
+                    <table class="data-table small">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Threshold</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="checks-table-body">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="bottom-grid">
+            <div class="panel">
+                <div class="panel-header">
+                    <span>⏱ Response Time (Mock)</span>
+                </div>
+                <div class="chart-container line-chart-container">
+                    <canvas id="responseChart"></canvas>
+                </div>
+                <div class="panel-footer">
+                    <span class="val green"><span class="arrow">↓</span> 120 ms</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <span>⚙ Top Processes</span>
+                </div>
+                <div class="table-container">
+                    <table class="data-table small">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>CPU</th>
+                                <th>Memory</th>
+                            </tr>
+                        </thead>
+                        <tbody id="processes-table-body">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
